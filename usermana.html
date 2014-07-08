@@ -126,8 +126,8 @@
                     display: '操作', isSort: false, width: 120, render: function (rowdata, rowindex, value) {
                         var h = "";
 
-                        h += "<a class='l-link' href='javascript:editRow(" + rowdata.id + ")'><img class='l-image' src='/basestation/assets/ligerui/skins/gray/images/metro/edit.png'/>编辑</a> ";
-                        h += "<a class='l-link' href='javascript:deleteRow(" + rowdata.id + ")'><img class='l-image' src='/basestation/assets/ligerui/skins/gray/images/metro/del.png'/>删除</a> ";
+                        h += "<a class='l-link' href='javascript:editRow(" + rowdata.id + ")'><img class='l-image' src='/BaseStation/assets/ligerui/skins/gray/images/metro/edit.png'/>编辑</a> ";
+                        h += "<a class='l-link' href='javascript:deleteRow(" + rowdata.id + ")'><img class='l-image' src='/BaseStation/assets/ligerui/skins/gray/images/metro/del.png'/>删除</a> ";
 
                         return h;
                     }
@@ -137,9 +137,9 @@
                 height: '100%',
                 toolbar: {
                     items: [
-                { id: 'add', text: '增加', click: itemclick, img: '/basestation/assets/ligerUI/skins/gray/images/metro/add.png' },
+                { id: 'add', text: '增加', click: itemclick, img: '/BaseStation/assets/ligerUI/skins/gray/images/metro/add.png' },
                 { line: true },
-                { id: 'del', text: '删除所选', click: itemclick, img: '/basestation/assets/ligerUI/skins/gray/images/metro/del.png' }
+                { id: 'del', text: '删除所选', click: itemclick, img: '/BaseStation/assets/ligerUI/skins/gray/images/metro/del.png' }
                     ]
                 }
             });
