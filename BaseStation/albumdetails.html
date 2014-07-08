@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="/assets/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/ligerUI/skins/Gray/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="/css/thumbnail.css" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/plugins/ligerForm.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/plugins/ligerDateEditor.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/plugins/ligerTree.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/plugins/ligerComboBox.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/plugins/ligerButton.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/plugins/ligerRadio.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/plugins/ligerSpinner.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/plugins/ligerTextBox.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/plugins/ligerTip.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+    <script src="/assets/ligerUI/js/plugins/ligerToolBar.js" type="text/javascript"></script>
+    <script src="/assets/jquery-validation/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="/assets/jquery-validation/jquery.metadata.js" type="text/javascript"></script>
+    <script src="/assets/jquery-validation/messages_cn.js" type="text/javascript"></script>
+    <script src="/scripts/baseStations.js"></script>
+    <script type="text/javascript">
+        var template = "<li class=\"thumbnail _128px\" onclick='showEdit([id])'><img src=\"[path]\" /><div class=\"caption\"><h3>[name]</h3><p>[upload_time]</p><p>上传者：[uploader]</p></div></li>";
+        $(function () {
+            var urlpara = geturlpara(location.href);
+            for (var i = 0; i < base_stations.length; i++) {
+                if (base_stations[i].id == urlpara.id) {
+                    for (var name in base_stations[i]) {
+                        $("#" + name).text(base_stations[i][name]);
+                    }
+                    var total_html = "";
+                    for (var j = 0; j < photos.length; j++) {
+                        if (photos[j].id == base_stations[i].id) {
+                            for (var k = 0; k < photos[j].photos.length; k++) {
+                                var html = template.replace("[name]", photos[j].photos[k].name);
+                                html = html.replace("[path]", photos[j].photos[k].path);
+                                html = html.replace("[id]", photos[j].photos[k].id);
+                                html = html.replace("[upload_time]", photos[j].photos[k].upload_time);
+                                html = html.replace("[uploader]", photos[j].photos[k].uploader);
+                                total_html += html;
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+
+            $("#map").html(total_html);
+            $("#pageloading").hide();
+        })
+        function showEdit(id) {
+            top.f_selectTab("editalbum", "编辑相册", 'editalbum.html?id=' + id);
+        }
+    </script>
+    <style>
+        * {
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+        }
+
+        ._128px {
+            display: block;
+            margin: 5px;
+            float: left;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+            ._128px img {
+                width: 128px;
+                height: 128px;
+            }
+
+        ul {
+            padding: 10px;
+        }
+
+        .thumbnail:hover {
+            background: #F8F8F8;
+        }
+
+        .thumbnail:active {
+            background: #f0f0f0;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        table.details {
+            margin: 5px 0 0 20px;
+            width: 700px;
+        }
+    </style>
+</head>
+<body>
+    <div id="message" style="width: 90%"></div>
+    <div class="l-loading" style="display: block" id="pageloading"></div>
+    <h3 style="padding:20px;">基站编号：<b id="name"></b></h3>
+    <table class="details">
+        <tr>
+            <td colspan="2" class="right">
+                LAC：<span id="lac"></span> &nbsp;
+                CI：<span id="ci"></span> &nbsp;
+                方位角：<span id="direction_angle"></span> &nbsp;
+                下倾角：<span id="inclination_angle"></span> &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td>
+                更新时刻：<span id="update_time"></span>
+            </td>
+            <td class="right">
+                经度：<span id="lng"></span>
+                纬度：<span id="lat"></span>
+                地址：<span id="address"></span>
+            </td>
+        </tr>
+    </table>
+    <div style="margin: 0; padding: 0;">
+        <ul id="map"></ul>
+    </div>
+</body>
+</html>

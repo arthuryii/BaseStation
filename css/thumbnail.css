@@ -1,0 +1,33 @@
+.thumbnail {
+    display: inline-block;
+    display: block;
+    height: auto;
+    max-width: 100%;
+    padding: 4px;
+    line-height: 1.428571429;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+    .thumbnail > img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+    }
+
+a.thumbnail:hover, a.thumbnail:focus {
+    border-color: #428bca;
+}
+
+.thumbnail > img {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.thumbnail .caption {
+    padding: 9px;
+    color: #333;
+}

@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            overflow: hidden;
+            color: #666666;
+            font-family: '微软雅黑';
+        }
+
+        .container {
+            height: 169px;
+            width: 624px;
+            position: absolute;
+            top: 38.2%;
+            left: 50%;
+            margin-top: -85px;
+            margin-left: -312px;
+        }
+
+        .img-box {
+            padding: 8px;
+            border: 1px solid #e2e2e2;
+            border-radius: 4px;
+            background-color: #f6f6f6;
+            margin: 5px;
+            opacity: 0.8;
+            cursor: pointer;
+            float: left;
+            width: 128px;
+        }
+
+            .img-box:hover {
+                background-color: white;
+            }
+
+            .img-box:active {
+                background-color: #EAEAEA;
+            }
+
+        .img-box-disabled {
+            width: 128px;
+            padding: 8px;
+            border: 1px solid #e2e2e2;
+            border-radius: 4px;
+            background-color: #f6f6f6;
+            margin: 5px;
+            float: left;
+            opacity: 0.8;
+            cursor: default;
+        }
+
+        .text-center {
+            font-size: 12px;
+            text-align: center;
+            color: #222222;
+        }
+
+            .text-center img {
+                width: 128px;
+                height: 128px;
+            }
+
+        #container {
+            margin: 100px 0px 0px 100px;
+            text-align: left;
+        }
+        #title{
+            overflow:hidden;
+            margin:63px 0 62px 0;
+            display:inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="logo" src="/images/wifi.png" />
+        <span id="title">欢迎来到基站管理平台</span>
+    </div>
+</body>
+</html>
