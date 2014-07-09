@@ -18,186 +18,201 @@ var base_station_grid_data = {
     Rows: base_stations
 }
 
+var positions = [
+    '',
+    '基站东南',
+    '基站正东',
+    '基站正北',
+    '基站东北',
+    '基站正南',
+    '基站正西',
+    '基站西南',
+    '基站西北',
+    '基站机房外',
+    '基站机房内'
+]
+
 var photos = [
     {
         id: 1, photos: [
-            { id: 1, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 2, name: '基站正东', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 3, name: '基站正北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 4, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 5, name: '基站正南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 6, name: '基站正西', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 7, name: '基站西南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 8, name: '基站西北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 9, name: '基站机房外', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
+            { id: 1, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 2, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 3, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 4, position: 4, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 5, position: 5, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 6, position: 6, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 7, position: 7, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 8, position: 8, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 9, position: 9, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 130, position: 10, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
         ]
     },
     {
         id: 2, photos: [
-            { id: 10, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 11, name: '基站正东', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 12, name: '基站正北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 13, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 14, name: '基站正南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 15, name: '基站正西', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 16, name: '基站西南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 17, name: '基站西北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 18, name: '基站机房外', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 19, name: '基站机房内', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
+            { id: 10, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 11, position: 2, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 12, position: 3, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 13, position: 4, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 14, position: 5, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 15, position: 6, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 16, position: 7, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 17, position: 8, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 18, position: 9, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 19, position: 10, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
         ]
     },
     {
         id: 3, photos: [
-            { id: 20, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 21, name: '基站正东', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 22, name: '基站正北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 23, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 24, name: '基站正南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 25, name: '基站正西', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 26, name: '基站西南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 27, name: '基站西北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 28, name: '基站机房外', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 29, name: '基站机房内', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
+            { id: 20, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 21, position: 2, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 22, position: 3, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 23, position: 4, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 24, position: 5, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 25, position: 6, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 26, position: 7, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 27, position: 8, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 28, position: 9, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 29, position: 10, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
         ]
     },
     {
         id: 4, photos: [
-            { id: 30, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 31, name: '基站正东', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 32, name: '基站正北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 33, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 34, name: '基站正南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 35, name: '基站正西', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 36, name: '基站西南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 37, name: '基站西北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 38, name: '基站机房外', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 39, name: '基站机房内', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
+            { id: 30, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 31, position: 2, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 32, position: 3, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 33, position: 4, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 34, position: 5, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 35, position: 6, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 36, position: 7, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 37, position: 8, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 38, position: 9, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 39, position: 10, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
         ]
     },
     {
         id: 5, photos: [
-            { id: 40, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 41, name: '基站正东', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 42, name: '基站正北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 43, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 44, name: '基站正南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 45, name: '基站正西', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 46, name: '基站西南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 47, name: '基站西北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 48, name: '基站机房外', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 49, name: '基站机房内', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
+            { id: 40, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 41, position: 2, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 42, position: 3, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 43, position: 4, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 44, position: 5, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 45, position: 6, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 46, position: 7, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 47, position: 8, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 48, position: 9, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 49, position: 10, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
         ]
     },
     {
         id: 6, photos: [
-            { id: 50, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 51, name: '基站正东', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 52, name: '基站正北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 53, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 54, name: '基站正南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 55, name: '基站正西', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 56, name: '基站西南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 57, name: '基站西北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 58, name: '基站机房外', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 59, name: '基站机房内', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
+            { id: 50, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 51, position: 2, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 52, position: 3, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 53, position: 4, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 54, position: 5, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 55, position: 6, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 56, position: 7, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 57, position: 8, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 58, position: 9, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 59, position: 10, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
         ]
     },
     {
         id: 7, photos: [
-            { id: 60, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 61, name: '基站正东', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 62, name: '基站正北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 63, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 64, name: '基站正南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 65, name: '基站正西', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 66, name: '基站西南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 67, name: '基站西北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 68, name: '基站机房外', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 69, name: '基站机房内', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
+            { id: 60, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 61, position: 2, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 62, position: 3, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 63, position: 4, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 64, position: 5, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 65, position: 6, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 66, position: 7, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 67, position: 8, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 68, position: 9, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 69, position: 10, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
         ]
     },
     {
         id: 8, photos: [
-            { id: 70, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 71, name: '基站正东', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 72, name: '基站正北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 73, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 74, name: '基站正南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 75, name: '基站正西', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 76, name: '基站西南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 77, name: '基站西北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 78, name: '基站机房外', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 79, name: '基站机房内', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
+            { id: 70, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 71, position: 2, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 72, position: 3, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 73, position: 4, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 74, position: 5, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 75, position: 6, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 76, position: 7, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 77, position: 8, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 78, position: 9, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 79, position: 10, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
         ]
     },
     {
         id: 9, photos: [
-            { id: 80, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 81, name: '基站正东', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 82, name: '基站正北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 83, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 84, name: '基站正南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 85, name: '基站正西', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 86, name: '基站西南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 87, name: '基站西北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 88, name: '基站机房外', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 89, name: '基站机房内', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
+            { id: 80, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 81, position: 2, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 82, position: 3, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 83, position: 4, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 84, position: 5, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 85, position: 6, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 86, position: 7, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 87, position: 8, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 88, position: 9, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 89, position: 10, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
         ]
     },
     {
         id: 10, photos: [
-            { id: 90, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 91, name: '基站正东', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 92, name: '基站正北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 93, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 94, name: '基站正南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 95, name: '基站正西', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 96, name: '基站西南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 97, name: '基站西北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 98, name: '基站机房外', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 99, name: '基站机房内', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
+            { id: 90, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 91, position: 2, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 92, position: 3, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 93, position: 4, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 94, position: 5, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 95, position: 6, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 96, position: 7, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 97, position: 8, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 98, position: 9, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 99, position: 10, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
         ]
     },
     {
         id: 11, photos: [
-            { id: 100, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 101, name: '基站正东', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 102, name: '基站正北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 103, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 104, name: '基站正南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 105, name: '基站正西', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 106, name: '基站西南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 107, name: '基站西北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 108, name: '基站机房外', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 109, name: '基站机房内', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
+            { id: 100, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 101, position: 2, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 102, position: 3, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 103, position: 4, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 104, position: 5, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 105, position: 6, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 106, position: 7, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 107, position: 8, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 108, position: 9, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 109, position: 10, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
         ]
     },
     {
         id: 12, photos: [
-            { id: 110, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 111, name: '基站正东', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 112, name: '基站正北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 113, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 114, name: '基站正南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 115, name: '基站正西', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 116, name: '基站西南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 117, name: '基站西北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 118, name: '基站机房外', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 119, name: '基站机房内', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
+            { id: 110, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 111, position: 2, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 112, position: 3, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 113, position: 4, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 114, position: 5, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 115, position: 6, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 116, position: 7, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 117, position: 8, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 118, position: 9, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 119, position: 10, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
         ]
     },
     {
         id: 13, photos: [
-            { id: 120, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 121, name: '基站正东', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 122, name: '基站正北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 123, name: '基站东南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 124, name: '基站正南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 125, name: '基站正西', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 126, name: '基站西南', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 127, name: '基站西北', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 128, name: '基站机房外', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
-            { id: 129, name: '基站机房内', upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
+            { id: 120, position: 1, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 121, position: 2, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 122, position: 3, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 123, position: 4, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 124, position: 5, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 125, position: 6, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 126, position: 7, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 127, position: 8, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 128, position: 9, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' },
+            { id: 129, position: 10, upload_time: '2014-07-01 12:00:00', uploader: 'xiaoMing', path: '/BaseStation/upload/fan.jpg' }
         ]
     }
 ]

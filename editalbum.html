@@ -30,24 +30,32 @@
         var template = "<li class=\"thumbnail _128px\" data-id='[id]'><img src=\"[path]\" /><div class=\"caption\"><h3>[name]</h3><p>[upload_time]</p><p>上传者：[uploader]</p></div><div class='select hidden'></div></li>";
         $(function () {
             var urlpara = geturlpara(location.href);
+            var total_html = "";
+            var photoWithType;
             for (var i = 0; i < base_stations.length; i++) {
                 if (base_stations[i].id == urlpara.id) {
                     for (var name in base_stations[i]) {
                         $("#" + name).text(base_stations[i][name]);
                     }
-                    var total_html = "";
                     for (var j = 0; j < photos.length; j++) {
                         if (photos[j].id == base_stations[i].id) {
-                            for (var k = 0; k < photos[j].photos.length; k++) {
-                                var html = template.replace("[name]", photos[j].photos[k].name);
-                                html = html.replace("[path]", photos[j].photos[k].path);
-                                html = html.replace("[upload_time]", photos[j].photos[k].upload_time);
-                                html = html.replace("[uploader]", photos[j].photos[k].uploader);
-                                total_html += html;
-                            }
+                            photoWithType = $.grep(photos[j].photos, function (data) {
+                                return data.position == urlpara.position;
+                            });
                         }
                     }
                     break;
+                }
+            }
+            console.log(photoWithType);
+            for (var k = 0; k < photoWithType.length; k++) {
+                var html = template.replace("[name]", positions[urlpara.position]);
+                html = html.replace("[path]", photoWithType[k].path);
+                html = html.replace("[upload_time]", photoWithType[k].upload_time);
+                html = html.replace("[uploader]", photoWithType[k].uploader);
+                total_html += html;
+                if (k % 5 == 0) {
+                    total_html += "<li class=\"showInLine\"></li>";
                 }
             }
             $("#map").html(total_html);
@@ -88,8 +96,8 @@
         }
 
             ._128px img {
-                width: 128px;
-                height: 128px;
+                width: 150px;
+                height: 150px;
             }
 
         .hidden {
@@ -127,32 +135,41 @@
 
         table.details {
             margin: 5px 0 0 20px;
-            width: 700px;
+            width: 830px;
+            color: #444444;
+        }
+        .title {
+            display: block;
+            margin: 20px 0 20px 20px;
+            width: 830px;
+            font-size: 1.17em;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div id="message" style="width: 90%"></div>
     <div class="l-loading" style="display: block" id="pageloading"></div>
-
-    <h3 style="padding:20px;">基站编号：<b id="name"></b></h3>
+    <div class="title">
+        基站编号：<b id="name"></b>
+    </div>
     <table class="details">
         <tr>
             <td colspan="2" class="right">
-                LAC：<span id="lac"></span> &nbsp;
-                CI：<span id="ci"></span> &nbsp;
-                方位角：<span id="direction_angle"></span> &nbsp;
-                下倾角：<span id="inclination_angle"></span> &nbsp;
+                <b>LAC：</b><span id="lac"></span>
+                <b>CI：</b><span id="ci"></span>
+                <b>方位角：</b><span id="direction_angle"></span>
+                <b>下倾角：</b><span id="inclination_angle"></span>
             </td>
         </tr>
         <tr>
             <td>
-                更新时刻：<span id="update_time"></span>
+                <b>更新时刻：</b><span id="update_time"></span>
             </td>
             <td class="right">
-                经度：<span id="lng"></span>
-                纬度：<span id="lat"></span>
-                地址：<span id="address"></span>
+                <b>经度：</b><span id="lng"></span>
+                <b>纬度：</b><span id="lat"></span>
+                <b>地址：</b><span id="address"></span>
             </td>
         </tr>
     </table>

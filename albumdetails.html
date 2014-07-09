@@ -27,36 +27,55 @@
     <script src="/BaseStation/assets/jquery-validation/messages_cn.js" type="text/javascript"></script>
     <script src="/BaseStation/scripts/baseStations.js"></script>
     <script type="text/javascript">
-        var template = "<li class=\"thumbnail _128px\" onclick='showEdit([id])'><img src=\"[path]\" /><div class=\"caption\"><h3>[name]</h3><p>[upload_time]</p><p>上传者：[uploader]</p></div></li>";
+        var template = "<li class=\"thumbnail _150px\" onclick='showEdit([id],[position])'><img src=\"[path]\" /><div class=\"caption\"><h3>[name]</h3><p>[upload_time]</p><p>上传者：[uploader]</p></div></li>";
         $(function () {
             var urlpara = geturlpara(location.href);
+            var indexes = [];
+            var total_html = "";
             for (var i = 0; i < base_stations.length; i++) {
                 if (base_stations[i].id == urlpara.id) {
                     for (var name in base_stations[i]) {
                         $("#" + name).text(base_stations[i][name]);
                     }
-                    var total_html = "";
                     for (var j = 0; j < photos.length; j++) {
                         if (photos[j].id == base_stations[i].id) {
                             for (var k = 0; k < photos[j].photos.length; k++) {
-                                var html = template.replace("[name]", photos[j].photos[k].name);
+                                var html = template.replace("[name]", positions[photos[j].photos[k].position]);
                                 html = html.replace("[path]", photos[j].photos[k].path);
-                                html = html.replace("[id]", photos[j].photos[k].id);
+                                html = html.replace("[id]", photos[j].id);
+                                html = html.replace("[position]", photos[j].photos[k].position);
                                 html = html.replace("[upload_time]", photos[j].photos[k].upload_time);
                                 html = html.replace("[uploader]", photos[j].photos[k].uploader);
-                                total_html += html;
+                                indexes[photos[j].photos[k].position] = html;
                             }
                         }
                     }
                     break;
                 }
             }
-
+            for (var i = 1; i < indexes.length; i++) {
+                if (!indexes[i]) {
+                    total_html += "<li class=\"thumbnail _150px\" onclick='showEdit(" + urlpara.id + "," + i + ")'><img src=\"/BaseStation/upload/fan.jpg\" /><div class=\"caption\"><h3>" + positions[i] + "</h3><p>无</p><p>上传者：无</p></div></li>";
+                    continue;
+                }
+                total_html += indexes[i];
+                if (i % 5 == 0) {
+                    total_html += "<li class=\"showInLine\"></li>";
+                }
+            }
             $("#map").html(total_html);
             $("#pageloading").hide();
+            $("#setting").click(function () {
+                editw = f_open2('edit.html?id=' + urlpara.id, "编辑基站");
+            });
         })
-        function showEdit(id) {
-            top.f_selectTab("editalbum", "编辑相册", 'editalbum.html?id=' + id);
+        function showEdit(id, position) {
+            top.f_selectTab("editalbum", "编辑相册", 'editalbum.html?id=' + id + "&position=" + position);
+        }
+        function f_open2(url, title) {
+            return $.ligerDialog.open({
+                title: title, url: url, height: 357, width: 440, isResize: true
+            });
         }
     </script>
     <style>
@@ -67,7 +86,7 @@
             -moz-user-select: none;
         }
 
-        ._128px {
+        ._150px {
             display: block;
             margin: 5px;
             float: left;
@@ -75,9 +94,9 @@
             overflow: hidden;
         }
 
-            ._128px img {
-                width: 128px;
-                height: 128px;
+            ._150px img {
+                width: 150px;
+                height: 150px;
             }
 
         ul {
@@ -98,31 +117,60 @@
 
         table.details {
             margin: 5px 0 0 20px;
-            width: 700px;
+            width: 830px;
+            color: #444444;
         }
+
+        .showInLine {
+            clear: both;
+        }
+
+        .title {
+            display: block;
+            margin: 20px 0 20px 20px;
+            width: 830px;
+            font-size: 1.17em;
+            font-weight: bold;
+        }
+
+        #setting {
+            background-image: url('/BaseStation/images/setting.png');
+            width: 32px;
+            height: 32px;
+            float: right;
+            margin-top: -6px;
+            cursor: pointer;
+        }
+
+            #setting:hover {
+                background-image: url('/BaseStation/images/setting_hover.png');
+            }
     </style>
 </head>
 <body>
     <div id="message" style="width: 90%"></div>
     <div class="l-loading" style="display: block" id="pageloading"></div>
-    <h3 style="padding:20px;">基站编号：<b id="name"></b></h3>
+    <div class="title">
+        基站编号：<b id="name"></b>
+        <div id="setting"></div>
+    </div>
     <table class="details">
         <tr>
             <td colspan="2" class="right">
-                LAC：<span id="lac"></span> &nbsp;
-                CI：<span id="ci"></span> &nbsp;
-                方位角：<span id="direction_angle"></span> &nbsp;
-                下倾角：<span id="inclination_angle"></span> &nbsp;
+                <b>LAC：</b><span id="lac"></span>
+                <b>CI：</b><span id="ci"></span>
+                <b>方位角：</b><span id="direction_angle"></span>
+                <b>下倾角：</b><span id="inclination_angle"></span>
             </td>
         </tr>
         <tr>
             <td>
-                更新时刻：<span id="update_time"></span>
+                <b>更新时刻：</b><span id="update_time"></span>
             </td>
             <td class="right">
-                经度：<span id="lng"></span>
-                纬度：<span id="lat"></span>
-                地址：<span id="address"></span>
+                <b>经度：</b><span id="lng"></span>
+                <b>纬度：</b><span id="lat"></span>
+                <b>地址：</b><span id="address"></span>
             </td>
         </tr>
     </table>
